@@ -12,7 +12,7 @@ export class PostsComponent implements OnInit {
 
   displayedColumns: string[] = ['scaledFileUrl', 'title', 'description', 'username', 'avatar', 'actions'];
 
-  publicaciones: PostResponse[] = [];
+  publicaciones!: PostResponse[];
   dataSource = new MatTableDataSource(this.publicaciones);
 
   constructor(private postService: PostService) { }
@@ -21,6 +21,7 @@ export class PostsComponent implements OnInit {
     this.postService.listarPosts().subscribe(res => {
       this.publicaciones = res;
       this.dataSource = new MatTableDataSource(this.publicaciones);
+      console.log(this.publicaciones);
     });
   }
 

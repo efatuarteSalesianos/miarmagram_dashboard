@@ -11,7 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class UsersComponent implements OnInit {
 
   displayedColumns: string[] = ['avatar', 'username', 'email', 'birthDate', 'followers', 'privateAccount', 'rol', 'actions'];
-  usuarios: UserResponse[] = [];
+  usuarios!: UserResponse[];
   dataSource = new MatTableDataSource(this.usuarios);
 
   constructor(private userService: UserService) { }
@@ -20,6 +20,7 @@ export class UsersComponent implements OnInit {
     this.userService.listarUsuarios().subscribe(res => {
       this.usuarios = res;
       this.dataSource = new MatTableDataSource(this.usuarios);
+      console.log(this.usuarios);
     });
   }
 

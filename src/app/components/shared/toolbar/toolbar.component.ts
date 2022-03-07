@@ -11,7 +11,6 @@ export class ToolbarComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.router.url);
   }
 
   getUsername () {
