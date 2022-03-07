@@ -1,0 +1,24 @@
+.mat-toolbar {
+    background: #2C2C2C;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+@font-face {
+    font-family: Instagram;
+    src: local("Instagram"), url(../../../../assets/fonts/insta_font_bold.otf) format("truetype");
+}
+
+.logo {
+    color: white;
+    padding: 0% 2%;
+    font-family: Instagram;
+    font-size: 33px;
+    text-align: center
+}
+
+mat-icon {
+    color: white
+}
