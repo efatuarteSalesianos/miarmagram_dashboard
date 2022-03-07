@@ -19,6 +19,21 @@
     text-align: center
 }
 
+.username {
+    color: white;
+    padding: 1% 0% 0% 0%;
+    font-size: 15px;
+    text-align: center
+}
+
+img {
+    padding: 0% 2%;
+    object-fit: cover;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
 mat-icon {
     color: white
 }

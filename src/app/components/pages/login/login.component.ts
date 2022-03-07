@@ -34,9 +34,16 @@ export class LoginComponent implements OnInit {
     this.loginDto.username = this.loginForm.get('username')?.value;
     this.loginDto.password = this.loginForm.get('password')?.value;
     this.authService.login(this.loginDto).subscribe(res => {
-      localStorage.setItem('token', res.token);
-      console.log(res.token);
-      this.router.navigate(['/home']);
+      if (res.rol == 'ADMIN') {
+        localStorage.setItem('token', res.token);
+        localStorage.setItem('username', res.username);
+        localStorage.setItem('avatar', res.avatar);
+        console.log(res.token);
+        this.router.navigate(['/home']);
+      }
+      else {
+        alert('Solo los administradores pueden entrar a la aplicación.')
+      }
     });
   }
 

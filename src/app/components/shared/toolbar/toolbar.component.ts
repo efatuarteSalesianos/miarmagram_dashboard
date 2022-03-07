@@ -14,6 +14,14 @@ export class ToolbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getUsername () {
+    return localStorage.getItem('username')
+  }
+
+  getAvatar() {
+    return localStorage.getItem('avatar')
+  }
+
   logout() {
     localStorage.clear();
     this.router.navigate(['/login']);
