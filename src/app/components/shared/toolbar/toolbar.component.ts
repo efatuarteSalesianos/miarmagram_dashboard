@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,9 +8,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    console.log(this.router.url);
   }
 
   getUsername () {
@@ -26,6 +26,5 @@ export class ToolbarComponent implements OnInit {
     localStorage.clear();
     this.router.navigate(['/login']);
   };
-
 
 }

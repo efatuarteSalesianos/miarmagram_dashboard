@@ -7,10 +7,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from '../components/pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: 'welcome', component: BackgroundComponent, data: {title: ''}},
+  { path: 'welcome', component: BackgroundComponent, data: {title: 'Bienvenido'}},
   { path: 'login', component: LoginComponent, data: {title: 'Iniciar Sesión'}},
   { path: 'register', component: RegisterComponent, data: {title: 'Regístrate'}},
   { path: 'home', component: HomeComponent, data: {title: 'Dashboard'}},
+  { path: 'posts', component: HomeComponent, data: {title: 'Dashboard Posts'}},
   { path: '',   redirectTo: '/welcome', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent },
 ];

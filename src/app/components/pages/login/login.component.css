@@ -16,10 +16,11 @@
 }
 
 mat-card {
-    width: 30%;
+    width: 33%;
 }
 
 .logo {
+    color: #2C2C2C;
     padding: 10% 0%;
     font-family: Instagram;
     font-size: 60px;
@@ -33,4 +34,13 @@ mat-form-field {
 button {
     margin: 2% 25% 10% 25%;
     width: 50%;
+}
+
+.error {
+    margin-top: -3%;
+    margin-left: 25%;
+    margin-bottom: 5%;
+    margin-right: 25%;
+    font-size: 12px;
+    color: red;
 }

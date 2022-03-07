@@ -7,5 +7,6 @@ export interface PostResponse {
   liked: boolean;
   userId : string;
   username: string;
+  avatar: string;
   originalFileUrl: string;
 }
