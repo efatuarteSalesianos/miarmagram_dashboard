@@ -37,7 +37,7 @@ export class UsersComponent implements OnInit {
       console.log('Give Admin failed');
       alert('No puedes hacer administrador a un usuario que ya lo es.')
     } else {
-      if(confirm("¿Estás seguro de que quieres borrar este post?")) {
+      if(confirm("¿Estás seguro de que quieres hacer ADMIN a este usuario?")) {
         console.log('Give Admin ok');
         this.giveAdmin(username);
         this.ngOnInit();
