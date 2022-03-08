@@ -22,4 +22,9 @@ export class UserService {
     let requestUrl = `${environment.API_BASE_URL}/users`;
     return this.http.get<UserResponse[]>(requestUrl, DEFAULT_HEADERS);
   }
+
+  giveAdmin(username: string): Observable<UserResponse> {
+    let requestUrl = `${environment.API_BASE_URL}/users/${username}/admin`;
+    return this.http.post<UserResponse>(requestUrl, DEFAULT_HEADERS);
+  }
 }

@@ -20,8 +20,13 @@ export class UsersComponent implements OnInit {
     this.userService.listarUsuarios().subscribe(res => {
       this.usuarios = res;
       this.dataSource = new MatTableDataSource(this.usuarios);
-      console.log('USERS: ' + this.usuarios);
     });
+  }
+
+  giveAdmin(username: string) {
+    this.userService.giveAdmin(username).subscribe(res => {
+      console.log(res);
+    })
   }
 
   applyFilter(event: Event) {

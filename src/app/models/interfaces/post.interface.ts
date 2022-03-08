@@ -1,4 +1,5 @@
 export interface PostResponse {
+  id: number;
   title: string;
   description: string;
   privatePost: boolean;

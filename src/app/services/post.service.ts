@@ -22,4 +22,9 @@ export class PostService {
     let requestUrl = `${environment.API_BASE_URL}/post/public`;
     return this.http.get<PostResponse[]>(requestUrl, DEFAULT_HEADERS);
   }
+
+  deletePost(id: number) {
+    let requestUrl = `${environment.API_BASE_URL}/post/${id}`;
+    return this.http.delete(requestUrl, DEFAULT_HEADERS);
+  }
 }

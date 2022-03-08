@@ -10,7 +10,7 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class PostsComponent implements OnInit {
 
-  displayedColumns: string[] = ['scaledFileUrl', 'title', 'description', 'username', 'avatar', 'actions'];
+  displayedColumns: string[] = ['id', 'scaledFileUrl', 'title', 'description', 'username', 'avatar', 'actions'];
 
   publicaciones!: PostResponse[];
   dataSource = new MatTableDataSource(this.publicaciones);
@@ -21,7 +21,12 @@ export class PostsComponent implements OnInit {
     this.postService.listarPosts().subscribe(res => {
       this.publicaciones = res;
       this.dataSource = new MatTableDataSource(this.publicaciones);
-      console.log(this.publicaciones);
+    });
+  }
+
+  deletePost(id: number) {
+    this.postService.deletePost(id).subscribe(res => {
+      console.log(res);
     });
   }
 
