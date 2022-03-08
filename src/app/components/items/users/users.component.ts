@@ -26,6 +26,7 @@ export class UsersComponent implements OnInit {
   giveAdmin(username: string) {
     this.userService.giveAdmin(username).subscribe(res => {
       console.log(res);
+      this.ngOnInit();
     })
   }
 
@@ -40,7 +41,6 @@ export class UsersComponent implements OnInit {
       if(confirm("¿Estás seguro de que quieres hacer ADMIN a este usuario?")) {
         console.log('Give Admin ok');
         this.giveAdmin(username);
-        this.ngOnInit();
       }
     }
   }
