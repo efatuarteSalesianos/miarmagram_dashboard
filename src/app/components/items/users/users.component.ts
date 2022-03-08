@@ -29,6 +29,21 @@ export class UsersComponent implements OnInit {
     })
   }
 
+  confirmAdminDialog(username: string) {
+    console.log('Diálogo abierto');
+    this.userService.giveAdmin(username).subscribe(res => {
+      console.log('Give Admin started');
+      if (res.rol == 'ADMIN') {
+        console.log('Give Admin failed');
+        alert('No puedes hacer administrador a un usuario que ya lo es.')
+      } else {
+        console.log('Give Admin ok');
+        this.giveAdmin(username);
+        window.location.reload();
+      }
+    })
+  }
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
