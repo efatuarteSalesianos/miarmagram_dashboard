@@ -30,6 +30,13 @@ export class PostsComponent implements OnInit {
     });
   }
 
+  openDeleteDialog(id: number) {
+    if(confirm("¿Estás seguro de que quieres borrar este post?")) {
+      this.deletePost(id);
+      window.location.reload();
+    }
+  }
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
