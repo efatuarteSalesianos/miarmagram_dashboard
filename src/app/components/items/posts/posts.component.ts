@@ -33,7 +33,7 @@ export class PostsComponent implements OnInit {
   openDeleteDialog(id: number) {
     if(confirm("¿Estás seguro de que quieres borrar este post?")) {
       this.deletePost(id);
-      window.location.reload();
+      this.ngOnInit();
     }
   }
 

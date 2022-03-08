@@ -45,7 +45,7 @@
             <ng-container matColumnDef="actions">
                 <th mat-header-cell *matHeaderCellDef> Acciones </th>
                 <td mat-cell *matCellDef="let element">
-                    <button (click)="confirmAdminDialog(element.username)" mat-icon-button matTooltip="Click to Give Admin" class="iconbutton" color="accent">
+                    <button (click)="confirmAdminDialog(element.username, element.rol)" mat-icon-button matTooltip="Click to Give Admin" class="iconbutton" color="accent">
                   <mat-icon aria-label="Give Admin">verified_user</mat-icon>
                 </button>
                 </td>
